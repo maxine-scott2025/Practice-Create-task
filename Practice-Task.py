@@ -1,21 +1,15 @@
-res_list = ["McDonalds", 'In n Out', 'Popeyes', 'Subway']
+colors = {"Red":[[0,255],[0,0],[0,0],"blue"], "Yellow": [[0,255],[165,255],[0,0]],'Orange': [[0,255],[0,165],[0,0]]}
 
-new_res = input("What resturant would you like to add to the list")
+R = int(input("Please input your RBG value for Red"))
 
-def rank_res(new_res, res_list):
+B = int(input("Please input your RBG value for Blue"))
 
-    for i in range(len(res_list)):
-        
-        rank = input("Do you like A)" + new_res + "more or B)" + res_list[i] + "more ? A/B")
+G = int(input("Please input your RBG value for Green"))
 
-        if rank == "A":
-            res_list.insert(i, new_res)
-            return res_list
+def check(colors,R,G,B):
+  for i in colors:
     
-        elif rank == "B":
-            continue
+    if R >=colors[i][0][0] and R <= colors[i][0][1] and G >= colors[i][1][0] and G <= colors[i][1][1] and B >= colors[i][2][0] and B <= colors[i][2][1]:
 
-    res_list.append(new_res)
-    return res_list 
-
-print("Your new ranking of resturants is", rank_res(new_res, res_list))
+       print("The color you inputted was " + i + " and the complent to your color is " + colors[i][3])
+check(colors,R,G,B)  
